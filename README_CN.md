@@ -68,7 +68,7 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 
 | 客户端 | 配置 |
 |---|---|
-| **Cherry Studio** | 提供商类型：OpenAI 兼容；API 地址：`https://<服务地址>/v1`；API Key：部署时生成的 Key；模型：`gemini-3.8-flash` / `gemini-3.7-flash` / `gemini-2.5-pro` 等 |
+| **Cherry Studio** | 提供商类型：OpenAI 兼容；API 地址：`https://<服务地址>/v1`；API Key：部署时生成的 Key；模型：`gemini-3.8-flash` / `gemini-3.1-pro` |
 | **CC Switch / Claude 客户端** | 端点：`https://<服务地址>/v1`（末尾不加斜杠）；**上游格式必须选 OpenAI Chat Completions**；模型保持客户端默认即可（如 `claude-opus-5-5`、`claude-sonnet-5-5` 等别名会按档位自动重定向至同档 Gemini）。注意：原生 Anthropic Messages 格式（`/v1/messages`）不受支持 |
 
 预置模型列表：
@@ -78,18 +78,16 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 | 模型名 | 说明 |
 |---|---|
 | `gemini-3.8-flash` | 最新旗舰（2026-09 GA） |
-| `gemini-3.7-flash` | 上代旗舰 |
 | `gemini-3.1-pro` | Pro 系列（preview，两个名字均可） |
-| `gemini-2.5-pro` | 推理增强 |
-| `gemini-2.5-flash` | 均衡 |
-| `gemini-2.5-flash-lite` | 快速低价 |
 
-**Claude 别名（按档位映射至同档 Gemini，仅 OpenAI 协议生效）**
+**Claude 别名（仅 OpenAI 协议生效）**
 
 | Claude 模型名 | 映射至 |
 |---|---|
-| `claude-opus-5-5` / `claude-opus-5` / `claude-fable-5-1` / `claude-fable-5` / `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` | `gemini-3.8-flash` |
-| `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-3.7-flash` |
+| `claude-sonnet-5` / `claude-sonnet-5-5` | `gemini-3.8-flash` |
+| `claude-opus-5` / `claude-opus-5-5` | `gemini-3.1-pro` |
+| `claude-haiku-4-5` | `gemini-3.8-flash` |
+| `claude-fable-5-1` | `gemini-3.8-flash` |
 
 > Claude 别名仅对 OpenAI 协议的请求生效；Anthropic 原生协议（`/v1/messages`）请改用 OpenAI 格式接入。
 

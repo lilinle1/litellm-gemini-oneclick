@@ -120,16 +120,10 @@ fi
 info "生成 LiteLLM 配置 (config.yaml)..."
 cat << EOF > config.yaml
 model_list:
-  # Gemini 系列（新模型必须使用 global 区域）
+  # Gemini 原生模型
   - model_name: gemini-3.8-flash
     litellm_params:
       model: vertex_ai/gemini-3.8-flash
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  - model_name: gemini-3.7-flash
-    litellm_params:
-      model: vertex_ai/gemini-3.7-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
@@ -146,85 +140,44 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  - model_name: gemini-2.5-pro
-    litellm_params:
-      model: vertex_ai/gemini-2.5-pro
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  - model_name: gemini-2.5-flash
-    litellm_params:
-      model: vertex_ai/gemini-2.5-flash
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  - model_name: gemini-2.5-flash-lite
-    litellm_params:
-      model: vertex_ai/gemini-2.5-flash-lite
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  # Claude 客户端别名（仅 OpenAI 协议客户端生效，按 Claude 档位映射至同档 Gemini）
-  # 旗舰档 Opus / Fable → Gemini 3.8 Flash
-  - model_name: claude-opus-5-5
-    litellm_params:
-      model: vertex_ai/gemini-3.8-flash
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  - model_name: claude-opus-5
-    litellm_params:
-      model: vertex_ai/gemini-3.8-flash
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  - model_name: claude-fable-5-1
-    litellm_params:
-      model: vertex_ai/gemini-3.8-flash
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  - model_name: claude-fable-5
-    litellm_params:
-      model: vertex_ai/gemini-3.8-flash
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
-  # 均衡档 Sonnet → Gemini 3.8 Flash（与 3.7 价格相近但更强）
-  - model_name: claude-sonnet-5-5
-    litellm_params:
-      model: vertex_ai/gemini-3.8-flash
-      vertex_project: "${PROJECT_ID}"
-      vertex_location: "global"
-
+  # Claude 别名（仅 OpenAI 协议客户端生效，四档映射）
+  # Sonnet → Gemini 3.8 Flash
   - model_name: claude-sonnet-5
     litellm_params:
       model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  - model_name: claude-sonnet-4-6
+  - model_name: claude-sonnet-5-5
     litellm_params:
       model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  - model_name: claude-3-7-sonnet-20250219
+  # Opus → Gemini 3.1 Pro
+  - model_name: claude-opus-5
     litellm_params:
-      model: vertex_ai/gemini-3.8-flash
+      model: vertex_ai/gemini-3.1-pro-preview
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # 轻量档 Haiku → Gemini 3.7 Flash
+  - model_name: claude-opus-5-5
+    litellm_params:
+      model: vertex_ai/gemini-3.1-pro-preview
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  # Haiku → Gemini 3.8 Flash
   - model_name: claude-haiku-4-5
     litellm_params:
-      model: vertex_ai/gemini-3.7-flash
+      model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  - model_name: claude-haiku-4-5-20251001
+  # Fable → Gemini 3.8 Flash
+  - model_name: claude-fable-5-1
     litellm_params:
-      model: vertex_ai/gemini-3.7-flash
+      model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
