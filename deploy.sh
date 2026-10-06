@@ -121,6 +121,12 @@ info "生成 LiteLLM 配置 (config.yaml)..."
 cat << EOF > config.yaml
 model_list:
   # Gemini 系列（新模型必须使用 global 区域）
+  - model_name: gemini-3.8-flash
+    litellm_params:
+      model: vertex_ai/gemini-3.8-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
   - model_name: gemini-3.7-flash
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
@@ -145,7 +151,45 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # Claude 客户端别名（仅 OpenAI 协议客户端生效，将请求自动转发至 Gemini）
+  # Claude 客户端别名（仅 OpenAI 协议客户端生效，按 Claude 档位映射至同档 Gemini）
+  # 旗舰档 Opus / Fable → Gemini 3.8 Flash
+  - model_name: claude-opus-5-5
+    litellm_params:
+      model: vertex_ai/gemini-3.8-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  - model_name: claude-opus-5
+    litellm_params:
+      model: vertex_ai/gemini-3.8-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  - model_name: claude-fable-5-1
+    litellm_params:
+      model: vertex_ai/gemini-3.8-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  - model_name: claude-fable-5
+    litellm_params:
+      model: vertex_ai/gemini-3.8-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  # 均衡档 Sonnet → Gemini 3.7 Flash
+  - model_name: claude-sonnet-5-5
+    litellm_params:
+      model: vertex_ai/gemini-3.7-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  - model_name: claude-sonnet-5
+    litellm_params:
+      model: vertex_ai/gemini-3.7-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
   - model_name: claude-sonnet-4-6
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
@@ -155,6 +199,19 @@ model_list:
   - model_name: claude-3-7-sonnet-20250219
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  # 轻量档 Haiku → Gemini 2.5 Flash-Lite
+  - model_name: claude-haiku-4-5
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash-lite
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  - model_name: claude-haiku-4-5-20251001
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash-lite
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 

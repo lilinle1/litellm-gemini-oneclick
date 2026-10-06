@@ -68,19 +68,28 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 
 | Client | Configuration |
 |---|---|
-| **Cherry Studio** | Provider type: OpenAI-compatible; API base: `https://<service-url>/v1`; API key: the generated key; models: `gemini-3.7-flash` / `gemini-2.5-pro` / `gemini-2.5-flash`, etc. |
-| **CC Switch / Claude clients** | Endpoint: `https://<service-url>/v1` (no trailing slash); **upstream format must be OpenAI Chat Completions**; use the `claude-sonnet-4-6` alias to route to Gemini. Note: the native Anthropic Messages format (`/v1/messages`) is not supported |
+| **Cherry Studio** | Provider type: OpenAI-compatible; API base: `https://<service-url>/v1`; API key: the generated key; models: `gemini-3.8-flash` / `gemini-3.7-flash` / `gemini-2.5-pro`, etc. |
+| **CC Switch / Claude clients** | Endpoint: `https://<service-url>/v1` (no trailing slash); **upstream format must be OpenAI Chat Completions**; keep the client's default model names (e.g. `claude-opus-5-5`, `claude-sonnet-5-5` are auto-redirected to the equivalent Gemini tier). Note: the native Anthropic Messages format (`/v1/messages`) is not supported |
 
 Pre-configured model list:
 
-| Model name | Routed to |
+**Native Gemini models**
+
+| Model name | Notes |
 |---|---|
-| `gemini-3.7-flash` | `vertex_ai/gemini-3.7-flash` (global) |
-| `gemini-2.5-pro` | `vertex_ai/gemini-2.5-pro` (global) |
-| `gemini-2.5-flash` | `vertex_ai/gemini-2.5-flash` (global) |
-| `gemini-2.5-flash-lite` | `vertex_ai/gemini-2.5-flash-lite` (global) |
-| `claude-sonnet-4-6` | `vertex_ai/gemini-3.7-flash` (global) |
-| `claude-3-7-sonnet-20250219` | `vertex_ai/gemini-3.7-flash` (global) |
+| `gemini-3.8-flash` | Latest flagship (GA Sept 2026) |
+| `gemini-3.7-flash` | Previous-gen flagship |
+| `gemini-2.5-pro` | Reasoning-enhanced |
+| `gemini-2.5-flash` | Balanced |
+| `gemini-2.5-flash-lite` | Fast & cheap |
+
+**Claude aliases (mapped to the equivalent Gemini tier; OpenAI protocol only)**
+
+| Claude model name | Mapped to |
+|---|---|
+| `claude-opus-5-5` / `claude-opus-5` / `claude-fable-5-1` / `claude-fable-5` | `gemini-3.8-flash` |
+| `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` | `gemini-3.7-flash` |
+| `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-2.5-flash-lite` |
 
 > The Claude aliases only work for OpenAI-protocol requests; for native Anthropic protocol (`/v1/messages`), switch the client to OpenAI format instead.
 
