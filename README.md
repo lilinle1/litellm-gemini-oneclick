@@ -122,6 +122,7 @@ Forgot your API key? Choose option 1 to display it.
 
 - **Why 2048M memory?** LiteLLM tends to OOM on smaller allocations; the default is a safe value.
 - **Why the `global` region?** The latest Gemini model series on Vertex AI must be called via the `global` location.
+- **400 error `maxOutputTokens value of 128000 but the supported range is 1 to 65537`?** Claude Opus/Sonnet 5.x clients request a 128K max output by default, but all Gemini models cap output at 65,536 tokens. Cap the max output on the client side: for Claude Code set the env var `CLAUDE_CODE_MAX_OUTPUT_TOKENS=65536` (on Windows: `setx CLAUDE_CODE_MAX_OUTPUT_TOKENS 65536`, then restart the terminal); in Cherry Studio lower the max-output model parameter below 65536.
 - **Is `--allow-unauthenticated` safe?** The endpoint accepts anonymous requests, but every call must present the randomly generated `master_key`. Just don't leak the key.
 - **How is this billed?** All inference goes through Vertex AI and draws down the $300 free trial credit first; Cloud Run itself has a generous free tier.
 
