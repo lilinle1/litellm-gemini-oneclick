@@ -202,16 +202,16 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # 轻量档 Haiku → Gemini 2.5 Flash-Lite
+  # 轻量档 Haiku → Gemini 3.7 Flash
   - model_name: claude-haiku-4-5
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash-lite
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
   - model_name: claude-haiku-4-5-20251001
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash-lite
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 

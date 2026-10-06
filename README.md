@@ -88,8 +88,7 @@ Pre-configured model list:
 | Claude model name | Mapped to |
 |---|---|
 | `claude-opus-5-5` / `claude-opus-5` / `claude-fable-5-1` / `claude-fable-5` | `gemini-3.8-flash` |
-| `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` | `gemini-3.7-flash` |
-| `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-2.5-flash-lite` |
+| `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` / `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-3.7-flash` |
 
 > The Claude aliases only work for OpenAI-protocol requests; for native Anthropic protocol (`/v1/messages`), switch the client to OpenAI format instead.
 

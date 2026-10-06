@@ -88,8 +88,7 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 | Claude 模型名 | 映射至 |
 |---|---|
 | `claude-opus-5-5` / `claude-opus-5` / `claude-fable-5-1` / `claude-fable-5` | `gemini-3.8-flash` |
-| `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` | `gemini-3.7-flash` |
-| `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-2.5-flash-lite` |
+| `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` / `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-3.7-flash` |
 
 > Claude 别名仅对 OpenAI 协议的请求生效；Anthropic 原生协议（`/v1/messages`）请改用 OpenAI 格式接入。
 
