@@ -190,28 +190,28 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # 均衡档 Sonnet → Gemini 3.7 Flash
+  # 均衡档 Sonnet → Gemini 3.8 Flash（与 3.7 价格相近但更强）
   - model_name: claude-sonnet-5-5
     litellm_params:
-      model: vertex_ai/gemini-3.7-flash
+      model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
   - model_name: claude-sonnet-5
     litellm_params:
-      model: vertex_ai/gemini-3.7-flash
+      model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
   - model_name: claude-sonnet-4-6
     litellm_params:
-      model: vertex_ai/gemini-3.7-flash
+      model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
   - model_name: claude-3-7-sonnet-20250219
     litellm_params:
-      model: vertex_ai/gemini-3.7-flash
+      model: vertex_ai/gemini-3.8-flash
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
@@ -300,11 +300,8 @@ echo "  客户端配置（Cherry Studio / CC Switch 等）:"
 echo "    提供商类型: OpenAI 兼容"
 echo "    API 地址:   $SERVICE_URL/v1"
 echo "    API Key:    $MASTER_KEY"
-echo "    模型名称:   gemini-3.8-flash / gemini-3.7-flash / gemini-2.5-pro"
-echo "                (Claude 客户端可用 claude-* 别名，按档位自动映射)"
-echo ""
-echo "  注意: Gemini 输出上限 65536 tokens。Claude Code 用户请设置环境变量"
-echo "        CLAUDE_CODE_MAX_OUTPUT_TOKENS=65536，否则 128K 请求会报 400。"
+echo "    模型名称:   gemini-3.7-flash / gemini-2.5-flash"
+echo "                (Claude 客户端可直接用 claude-sonnet-4-6 别名)"
 echo "=============================================="
 echo ""
 info "本地保留了 config.yaml，之后添加/修改模型可编辑它并重新运行本脚本完成热更新。"

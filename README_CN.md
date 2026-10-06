@@ -1,4 +1,4 @@
-﻿# LiteLLM Gemini 代理 · 一键部署（GCP Cloud Run · Keyless）
+# LiteLLM Gemini 代理 · 一键部署（GCP Cloud Run · Keyless）
 
 [English](./README.md) | 简体中文
 
@@ -88,8 +88,8 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 
 | Claude 模型名 | 映射至 |
 |---|---|
-| `claude-opus-5-5` / `claude-opus-5` / `claude-fable-5-1` / `claude-fable-5` | `gemini-3.8-flash` |
-| `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` / `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-3.7-flash` |
+| `claude-opus-5-5` / `claude-opus-5` / `claude-fable-5-1` / `claude-fable-5` / `claude-sonnet-5-5` / `claude-sonnet-5` / `claude-sonnet-4-6` / `claude-3-7-sonnet-20250219` | `gemini-3.8-flash` |
+| `claude-haiku-4-5` / `claude-haiku-4-5-20251001` | `gemini-3.7-flash` |
 
 > Claude 别名仅对 OpenAI 协议的请求生效；Anthropic 原生协议（`/v1/messages`）请改用 OpenAI 格式接入。
 
@@ -122,7 +122,6 @@ bash manage.sh
 
 - **为什么内存要 2048M？** LiteLLM 在低内存配置下容易 OOM 崩溃，默认值已足够。
 - **为什么用 `global` 区域？** Gemini 最新系列模型必须通过 Vertex AI 的 `global` 区域调用。
-- **报错 400 `maxOutputTokens value of 128000 but the supported range is 1 to 65537`？** Claude Opus/Sonnet 5.x 客户端默认请求 128K 最大输出，但 Gemini 全系输出上限为 65,536。在客户端限制最大输出即可：Claude Code 设置环境变量 `CLAUDE_CODE_MAX_OUTPUT_TOKENS=65536`（Windows 永久设置：`setx CLAUDE_CODE_MAX_OUTPUT_TOKENS 65536`，设置后重启终端）；Cherry Studio 在模型参数里把最大输出调到 65536 以下。
 - **`--allow-unauthenticated` 安全吗？** 服务虽允许匿名访问，但所有请求必须携带随机生成的 `master_key` 才能调用，请勿泄露 Key。
 - **费用怎么算？** 全部走 Vertex AI 计费，新账号优先消耗 $300 赠金，部署在 Cloud Run 本身有免费额度。
 
