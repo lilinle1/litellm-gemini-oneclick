@@ -133,6 +133,19 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
+  # Gemini 3.1 Pro（当前为 preview 版本）
+  - model_name: gemini-3.1-pro
+    litellm_params:
+      model: vertex_ai/gemini-3.1-pro-preview
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  - model_name: gemini-3.1-pro-preview
+    litellm_params:
+      model: vertex_ai/gemini-3.1-pro-preview
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
   - model_name: gemini-2.5-pro
     litellm_params:
       model: vertex_ai/gemini-2.5-pro

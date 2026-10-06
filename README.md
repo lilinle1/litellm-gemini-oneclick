@@ -79,6 +79,7 @@ Pre-configured model list:
 |---|---|
 | `gemini-3.8-flash` | Latest flagship (GA Sept 2026) |
 | `gemini-3.7-flash` | Previous-gen flagship |
+| `gemini-3.1-pro` | Pro series (preview; both names work) |
 | `gemini-2.5-pro` | Reasoning-enhanced |
 | `gemini-2.5-flash` | Balanced |
 | `gemini-2.5-flash-lite` | Fast & cheap |

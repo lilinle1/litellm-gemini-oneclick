@@ -79,6 +79,7 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 |---|---|
 | `gemini-3.8-flash` | 最新旗舰（2026-09 GA） |
 | `gemini-3.7-flash` | 上代旗舰 |
+| `gemini-3.1-pro` | Pro 系列（preview，两个名字均可） |
 | `gemini-2.5-pro` | 推理增强 |
 | `gemini-2.5-flash` | 均衡 |
 | `gemini-2.5-flash-lite` | 快速低价 |
