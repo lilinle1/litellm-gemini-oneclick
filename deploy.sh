@@ -120,10 +120,16 @@ fi
 info "生成 LiteLLM 配置 (config.yaml)..."
 cat << EOF > config.yaml
 model_list:
-  # Gemini 最新系列（必须使用 global 区域）
+  # Gemini 系列（新模型必须使用 global 区域）
   - model_name: gemini-3.7-flash
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  - model_name: gemini-2.5-pro
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
@@ -133,7 +139,13 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # Claude 客户端别名（将 Claude 客户端发出的请求自动转发至 Gemini）
+  - model_name: gemini-2.5-flash-lite
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash-lite
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  # Claude 客户端别名（仅 OpenAI 协议客户端生效，将请求自动转发至 Gemini）
   - model_name: claude-sonnet-4-6
     litellm_params:
       model: vertex_ai/gemini-3.7-flash

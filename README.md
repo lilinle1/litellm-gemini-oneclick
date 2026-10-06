@@ -68,17 +68,21 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 
 | Client | Configuration |
 |---|---|
-| **Cherry Studio** | Provider type: OpenAI-compatible; API base: `https://<service-url>/v1`; API key: the generated key; models: `gemini-3.7-flash` / `gemini-2.5-flash` |
-| **CC Switch / Claude clients** | Endpoint: `https://<service-url>/v1` (no trailing slash); upstream format: OpenAI Chat Completions or native Anthropic Messages; keep default model names (`claude-sonnet-4-6` alias is auto-redirected to Gemini) |
+| **Cherry Studio** | Provider type: OpenAI-compatible; API base: `https://<service-url>/v1`; API key: the generated key; models: `gemini-3.7-flash` / `gemini-2.5-pro` / `gemini-2.5-flash`, etc. |
+| **CC Switch / Claude clients** | Endpoint: `https://<service-url>/v1` (no trailing slash); **upstream format must be OpenAI Chat Completions**; use the `claude-sonnet-4-6` alias to route to Gemini. Note: the native Anthropic Messages format (`/v1/messages`) is not supported |
 
 Pre-configured model list:
 
 | Model name | Routed to |
 |---|---|
 | `gemini-3.7-flash` | `vertex_ai/gemini-3.7-flash` (global) |
+| `gemini-2.5-pro` | `vertex_ai/gemini-2.5-pro` (global) |
 | `gemini-2.5-flash` | `vertex_ai/gemini-2.5-flash` (global) |
+| `gemini-2.5-flash-lite` | `vertex_ai/gemini-2.5-flash-lite` (global) |
 | `claude-sonnet-4-6` | `vertex_ai/gemini-3.7-flash` (global) |
 | `claude-3-7-sonnet-20250219` | `vertex_ai/gemini-3.7-flash` (global) |
+
+> The Claude aliases only work for OpenAI-protocol requests; for native Anthropic protocol (`/v1/messages`), switch the client to OpenAI format instead.
 
 ## Management Menu
 

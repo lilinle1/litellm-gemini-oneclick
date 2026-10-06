@@ -68,17 +68,21 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 
 | 客户端 | 配置 |
 |---|---|
-| **Cherry Studio** | 提供商类型：OpenAI 兼容；API 地址：`https://<服务地址>/v1`；API Key：部署时生成的 Key；模型：`gemini-3.7-flash` / `gemini-2.5-flash` |
-| **CC Switch / Claude 客户端** | 端点：`https://<服务地址>/v1`（末尾不加斜杠）；上游格式：OpenAI Chat Completions 或 Anthropic Messages 原生；模型保持默认即可（`claude-sonnet-4-6` 别名自动重定向至 Gemini） |
+| **Cherry Studio** | 提供商类型：OpenAI 兼容；API 地址：`https://<服务地址>/v1`；API Key：部署时生成的 Key；模型：`gemini-3.7-flash` / `gemini-2.5-pro` / `gemini-2.5-flash` 等 |
+| **CC Switch / Claude 客户端** | 端点：`https://<服务地址>/v1`（末尾不加斜杠）；**上游格式必须选 OpenAI Chat Completions**；模型填 `claude-sonnet-4-6` 别名即可自动重定向至 Gemini。注意：原生 Anthropic Messages 格式（`/v1/messages`）不受支持 |
 
 预置模型列表：
 
 | 模型名 | 实际转发 |
 |---|---|
 | `gemini-3.7-flash` | `vertex_ai/gemini-3.7-flash` (global) |
+| `gemini-2.5-pro` | `vertex_ai/gemini-2.5-pro` (global) |
 | `gemini-2.5-flash` | `vertex_ai/gemini-2.5-flash` (global) |
+| `gemini-2.5-flash-lite` | `vertex_ai/gemini-2.5-flash-lite` (global) |
 | `claude-sonnet-4-6` | `vertex_ai/gemini-3.7-flash` (global) |
 | `claude-3-7-sonnet-20250219` | `vertex_ai/gemini-3.7-flash` (global) |
+
+> Claude 别名仅对 OpenAI 协议的请求生效；Anthropic 原生协议（`/v1/messages`）请改用 OpenAI 格式接入。
 
 ## 管理菜单
 
