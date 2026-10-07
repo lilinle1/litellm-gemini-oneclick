@@ -129,6 +129,11 @@ Forgot your API key? Choose option 1 to display it.
 bash manage.sh   # choose 3 for a full uninstall, or 4 to remove individual resources
 ```
 
+## Acknowledgements
+
+- [LiteLLM](https://github.com/BerriAI/litellm) (MIT License) — the core proxy engine deployed by this project
+- [Google Cloud](https://cloud.google.com/) — Cloud Run / Vertex AI / Secret Manager
+
 ## License
 
 [MIT](./LICENSE)

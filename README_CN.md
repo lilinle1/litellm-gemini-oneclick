@@ -129,6 +129,11 @@ bash manage.sh
 bash manage.sh   # 选择 3 完整卸载，或选择 4 按需单独删除
 ```
 
+## 致谢
+
+- [LiteLLM](https://github.com/BerriAI/litellm)（MIT License）— 本项目部署的核心代理引擎
+- [Google Cloud](https://cloud.google.com/) — Cloud Run / Vertex AI / Secret Manager
+
 ## 许可证
 
 [MIT](./LICENSE)
