@@ -77,7 +77,8 @@ Pre-configured model list:
 
 | Model name | Notes |
 |---|---|
-| `gemini-3.8-flash` | Latest flagship (GA Sept 2026) |
+| `gemini-4-argon` | Latest flagship (GA Oct 13, 2026; 1M token output limit) |
+| `gemini-3.8-flash` | Previous flagship (GA Sept 2026) |
 | `gemini-3.1-pro` | Pro series (preview; both names work) |
 
 **Claude aliases (OpenAI protocol only)**
@@ -85,7 +86,7 @@ Pre-configured model list:
 | Claude model name | Mapped to |
 |---|---|
 | `claude-sonnet-5` / `claude-sonnet-5-5` | `gemini-3.8-flash` |
-| `claude-opus-5` / `claude-opus-5-5` | `gemini-3.1-pro` |
+| `claude-opus-5` / `claude-opus-5-5` | `gemini-4-argon` |
 | `claude-haiku-4-5` | `gemini-3.8-flash` |
 | `claude-fable-5-1` | `gemini-3.8-flash` |
 

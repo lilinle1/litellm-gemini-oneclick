@@ -77,7 +77,8 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 
 | 模型名 | 说明 |
 |---|---|
-| `gemini-3.8-flash` | 最新旗舰（2026-09 GA） |
+| `gemini-4-argon` | 最新旗舰（2026-10-13 GA，单次输出上限 1M token） |
+| `gemini-3.8-flash` | 上一代旗舰（2026-09 GA） |
 | `gemini-3.1-pro` | Pro 系列（preview，两个名字均可） |
 
 **Claude 别名（仅 OpenAI 协议生效）**
@@ -85,7 +86,7 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 | Claude 模型名 | 映射至 |
 |---|---|
 | `claude-sonnet-5` / `claude-sonnet-5-5` | `gemini-3.8-flash` |
-| `claude-opus-5` / `claude-opus-5-5` | `gemini-3.1-pro` |
+| `claude-opus-5` / `claude-opus-5-5` | `gemini-4-argon` |
 | `claude-haiku-4-5` | `gemini-3.8-flash` |
 | `claude-fable-5-1` | `gemini-3.8-flash` |
 

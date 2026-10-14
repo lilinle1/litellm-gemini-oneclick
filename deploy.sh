@@ -121,6 +121,13 @@ info "生成 LiteLLM 配置 (config.yaml)..."
 cat << EOF > config.yaml
 model_list:
   # Gemini 原生模型
+  # Gemini 4 Argon（2026-10-13 GA，最新旗舰，单次输出上限 1M token）
+  - model_name: gemini-4-argon
+    litellm_params:
+      model: vertex_ai/gemini-4-argon
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
   - model_name: gemini-3.8-flash
     litellm_params:
       model: vertex_ai/gemini-3.8-flash
@@ -154,16 +161,16 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # Opus → Gemini 3.1 Pro
+  # Opus → Gemini 4 Argon（最新旗舰）
   - model_name: claude-opus-5
     litellm_params:
-      model: vertex_ai/gemini-3.1-pro-preview
+      model: vertex_ai/gemini-4-argon
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
   - model_name: claude-opus-5-5
     litellm_params:
-      model: vertex_ai/gemini-3.1-pro-preview
+      model: vertex_ai/gemini-4-argon
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
