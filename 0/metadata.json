@@ -22,9 +22,9 @@
     "api_call_count": 49
   },
   "redaction": {
-    "replacements": 2,
+    "replacements": 4,
     "layers": {
-      "betterleaks": 0,
+      "betterleaks": 2,
       "connection_string": 0,
       "credential_key": 0,
       "credential_value": 0,
