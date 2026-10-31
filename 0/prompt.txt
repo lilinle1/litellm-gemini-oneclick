@@ -1,0 +1,68 @@
+会，我已经帮你执行了，请继续。
+
+---
+
+ok
+
+---
+
+<pasted_content id="918d">
+现在做 Entire 第一次试审。背景你已经知道：仓库是
+lilinle1/litellm-gemini-oneclick，Mirror 已接入（entire + origin
+两个 remote 都在），Entire 侧 Trails 已开启。
+
+开始前先确认一件事：我是否已经在 Entire 网页创建并激活了
+名为 “Code review lite” 的审查 Agent（绑定本仓库，预置的
+GPT-6.1 Sol 版 Code review 没有启用）。如果我没有明确说已建好，
+先停下来问我，不要往下做。
+
+确认后按顺序执行：
+
+1. 先检查：`git status` 必须是 clean，当前分支应是 master，
+   `git remote -v` 和 `entire status` 输出给我看一眼。
+2. 从 master 新建分支 `entire-trial/first-review`。
+3. 在这个分支上找一个极小的、低风险的真实改动来做
+   （优先：给 README 补一小段缺失的部署/使用说明；
+   或者修一处明显的文档或注释错误。不要改业务逻辑，
+   不要改配置文件，不要碰任何带密钥的文件。）
+   改完把完整 `git diff` 和 `git diff --stat` 给我看，
+   我说可以之后你才能 commit。
+4. 我批准后：commit（message 写清是 Entire trial review），
+   然后运行 `entire trail create --title "First trial review"`，
+   推送时如果 Entire 问是否把 commit 关联到 session checkpoint，选 Y。
+5. 把这个分支 push 到 entire remote，不要 push 到 master。
+6. push 完汇报这几样：
+   - Trail 的编号和网页链接
+   - 分支名、commit hash
+   - 这次 diff 的文件数和增删行数
+   - `entire trail list` 或你从 `entire agent-help` 查到的
+     查看 Trail 状态的命令输出，看云端审查是否已开始
+
+红线：不合并分支、不动 master、不改 remote 配置、不 force push、
+不启用其他审查 Agent。如果 Trail 里显示这次要审的不是这一个
+小 commit 而是一大堆历史文件，立即停下来报告，不要让它继续跑。
+</pasted_content id="918d">
+
+---
+
+yes
+
+---
+
+<pasted_content id="918d">
+确认：diff 两处改动批准，可以 commit 并继续第 4–6 步。
+
+补充确认：Entire 网页端 “Code review lite” 已创建并处于 Active，
+绑定仓库 lilinle1/litellm-gemini-oneclick，预置审查员未启用。
+（如你执行中发现状态对不上，先停下来告诉我，不要 push。）
+
+执行细节：
+- commit message 用：docs: fix deploy branch and model alias in README
+- commit 后运行 `entire trail create --title "First trial review"`，
+  Entire 问是否关联 session checkpoint 时选 Y
+- 只把 entire-trial/first-review 分支 push 到 entire remote，
+  不合并、不动 master、不 force push
+- push 后查一次 Trail 状态并汇报：Trail 编号和链接、commit hash、
+  云端审查是已开始 / 排队 / 已完成中的哪种状态；
+  如果审查没立刻开始，也如实汇报，不要反复 push 试图触发
+</pasted_content id="918d">
