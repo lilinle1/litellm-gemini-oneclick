@@ -78,6 +78,7 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 | 模型名 | 说明 |
 |---|---|
 | `gemini-4-argon` | 最新旗舰（2026-10-13 GA，单次输出上限 1M token） |
+| `gemini-4-carbon` | 前沿型号（2026-10-28 发布，未公开 GA；仅部分项目可按名称直接调用） |
 | `gemini-3.8-flash` | 上一代旗舰（2026-09 GA） |
 | `gemini-3.1-pro` | Pro 系列（preview，两个名字均可） |
 
