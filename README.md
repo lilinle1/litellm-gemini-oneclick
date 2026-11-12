@@ -79,6 +79,7 @@ Pre-configured model list:
 |---|---|
 | `gemini-4-argon` | Latest flagship (GA Oct 13, 2026; 1M token output limit) |
 | `gemini-4-carbon` | Frontier model (announced Oct 28, 2026, not GA; callable by name only on some projects) |
+| `gemini-4-hydrogen` | Lightweight fast variant (not GA; callable by name on global/eu endpoints) |
 | `gemini-3.8-flash` | Previous flagship (GA Sept 2026) |
 | `gemini-3.1-pro` | Pro series (preview; both names work) |
 
