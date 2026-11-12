@@ -128,6 +128,20 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
+  # Gemini 4 Carbon（2026-10-28 发布，未公开 GA，仅部分项目可按名称直接调用）
+  - model_name: gemini-4-carbon
+    litellm_params:
+      model: vertex_ai/gemini-4-carbon
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  # Gemini 4 Hydrogen（轻量快速版，未公开 GA，global/eu 端点可按名称直接调用）
+  - model_name: gemini-4-hydrogen
+    litellm_params:
+      model: vertex_ai/gemini-4-hydrogen
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
   - model_name: gemini-3.8-flash
     litellm_params:
       model: vertex_ai/gemini-3.8-flash
