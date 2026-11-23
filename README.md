@@ -79,7 +79,8 @@ Pre-configured model list:
 |---|---|
 | `gemini-4-argon` | Latest flagship (GA Oct 13, 2026; 1M token output limit) |
 | `gemini-4-carbon` | Frontier model (announced Oct 28, 2026, not GA; callable by name only on some projects) |
-| `gemini-4-hydrogen` | Lightweight fast variant (not GA; callable by name on global/eu endpoints) |
+| `gemini-4-hydrogen` | Lightweight fast variant (GA Nov 12, 2026) |
+| `gemini-4-neon` | Frontier-speed variant (GA Nov 18, 2026; $3/$15 per million tokens) |
 | `gemini-3.8-flash` | Previous flagship (GA Sept 2026) |
 | `gemini-3.1-pro` | Pro series (preview; both names work) |
 
@@ -87,10 +88,10 @@ Pre-configured model list:
 
 | Claude model name | Mapped to |
 |---|---|
-| `claude-sonnet-5` / `claude-sonnet-5-5` | `gemini-3.8-flash` |
-| `claude-opus-5` / `claude-opus-5-5` | `gemini-4-argon` |
-| `claude-haiku-4-5` | `gemini-3.8-flash` |
-| `claude-fable-5-1` | `gemini-3.8-flash` |
+| `claude-sonnet-5` / `claude-sonnet-5-5` | `gemini-4-hydrogen` |
+| `claude-opus-5` / `claude-opus-5-5` | `gemini-4-neon` |
+| `claude-haiku-4-5` | `gemini-4-hydrogen` |
+| `claude-fable-5-1` | `gemini-4-carbon` |
 
 > The Claude aliases only work for OpenAI-protocol requests; for native Anthropic protocol (`/v1/messages`), switch the client to OpenAI format instead.
 
