@@ -78,6 +78,9 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 | 模型名 | 说明 |
 |---|---|
 | `gemini-4-argon` | 最新旗舰（2026-10-13 GA，单次输出上限 1M token） |
+| `gemini-4-carbon` | 前沿型号（2026-10-28 发布，未公开 GA；仅部分项目可按名称直接调用） |
+| `gemini-4-hydrogen` | 轻量快速版（2026-11-12 GA） |
+| `gemini-4-neon` | 前沿速度版（2026-11-18 GA，$3/$15 每百万 token） |
 | `gemini-3.8-flash` | 上一代旗舰（2026-09 GA） |
 | `gemini-3.1-pro` | Pro 系列（preview，两个名字均可） |
 
@@ -85,10 +88,10 @@ bash deploy.sh --region=asia-east1 --key=sk-my-key
 
 | Claude 模型名 | 映射至 |
 |---|---|
-| `claude-sonnet-5` / `claude-sonnet-5-5` | `gemini-3.8-flash` |
-| `claude-opus-5` / `claude-opus-5-5` | `gemini-4-argon` |
-| `claude-haiku-4-5` | `gemini-3.8-flash` |
-| `claude-fable-5-1` | `gemini-3.8-flash` |
+| `claude-sonnet-5` / `claude-sonnet-5-5` | `gemini-4-hydrogen` |
+| `claude-opus-5` / `claude-opus-5-5` | `gemini-4-neon` |
+| `claude-haiku-4-5` | `gemini-4-hydrogen` |
+| `claude-fable-5-1` | `gemini-4-carbon` |
 
 > Claude 别名仅对 OpenAI 协议的请求生效；Anthropic 原生协议（`/v1/messages`）请改用 OpenAI 格式接入。
 

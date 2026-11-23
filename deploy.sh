@@ -128,6 +128,27 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
+  # Gemini 4 Carbon（2026-10-28 发布，未公开 GA，仅部分项目可按名称直接调用）
+  - model_name: gemini-4-carbon
+    litellm_params:
+      model: vertex_ai/gemini-4-carbon
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  # Gemini 4 Hydrogen（轻量快速版，2026-11-12 GA）
+  - model_name: gemini-4-hydrogen
+    litellm_params:
+      model: vertex_ai/gemini-4-hydrogen
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
+  # Gemini 4 Neon（前沿速度版，2026-11-18 GA）
+  - model_name: gemini-4-neon
+    litellm_params:
+      model: vertex_ai/gemini-4-neon
+      vertex_project: "${PROJECT_ID}"
+      vertex_location: "global"
+
   - model_name: gemini-3.8-flash
     litellm_params:
       model: vertex_ai/gemini-3.8-flash
@@ -147,44 +168,44 @@ model_list:
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # Claude 别名（仅 OpenAI 协议客户端生效，四档映射）
-  # Sonnet → Gemini 3.8 Flash
+  # Claude 别名（仅 OpenAI 协议客户端生效）
+  # Sonnet → Gemini 4 Hydrogen（轻量快速）
   - model_name: claude-sonnet-5
     litellm_params:
-      model: vertex_ai/gemini-3.8-flash
+      model: vertex_ai/gemini-4-hydrogen
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
   - model_name: claude-sonnet-5-5
     litellm_params:
-      model: vertex_ai/gemini-3.8-flash
+      model: vertex_ai/gemini-4-hydrogen
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # Opus → Gemini 4 Argon（最新旗舰）
+  # Opus → Gemini 4 Neon（GA，前沿速度）
   - model_name: claude-opus-5
     litellm_params:
-      model: vertex_ai/gemini-4-argon
+      model: vertex_ai/gemini-4-neon
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
   - model_name: claude-opus-5-5
     litellm_params:
-      model: vertex_ai/gemini-4-argon
+      model: vertex_ai/gemini-4-neon
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # Haiku → Gemini 3.8 Flash
+  # Haiku → Gemini 4 Hydrogen
   - model_name: claude-haiku-4-5
     litellm_params:
-      model: vertex_ai/gemini-3.8-flash
+      model: vertex_ai/gemini-4-hydrogen
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
-  # Fable → Gemini 3.8 Flash
+  # Fable → Gemini 4 Carbon
   - model_name: claude-fable-5-1
     litellm_params:
-      model: vertex_ai/gemini-3.8-flash
+      model: vertex_ai/gemini-4-carbon
       vertex_project: "${PROJECT_ID}"
       vertex_location: "global"
 
